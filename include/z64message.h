@@ -23,6 +23,24 @@ typedef enum {
 // TODO get these properties from the textures themselves
 #define MESSAGE_TEXTURE_STATIC_TEX_SIZE 0x900
 
+// Macros for generating characters in the filename encoding (loaded by Font_LoadOrderedFont).
+// These are used like FILENAME_DIGIT('0') or FILENAME_UPPERCASE('A').
+#if OOT_NTSC
+#define FILENAME_DIGIT(c)                   ((c) - '0')
+#define FILENAME_UPPERCASE(c)               ((c) - 'A' + 0xAB)
+#define FILENAME_LOWERCASE(c)               ((c) - 'a' + 0xC5)
+#define FILENAME_SPACE                      0xDF
+#define FILENAME_DASH                       0xE4
+#define FILENAME_PERIOD                     0xEA
+#else
+#define FILENAME_DIGIT(c)                   ((c) - '0')
+#define FILENAME_UPPERCASE(c)               ((c) - 'A' + 0x0A)
+#define FILENAME_LOWERCASE(c)               ((c) - 'a' + 0x24)
+#define FILENAME_SPACE                      0x3E
+#define FILENAME_DASH                       0x3F
+#define FILENAME_PERIOD                     0x40
+#endif
+
 typedef enum {
     /* 0x00 */ MSGMODE_NONE,
     /* 0x01 */ MSGMODE_TEXT_START,
