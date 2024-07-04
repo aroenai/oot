@@ -2097,7 +2097,11 @@ void func_80086D5C(s32* buf, u16 size) {
 }
 
 void Interface_LoadActionLabel(InterfaceContext* interfaceCtx, u16 action, s16 loadOffset) {
+#if OOT_NTSC
+    static void* sDoActionTextures[] = { gAttackDoActionJPNTex, gCheckDoActionJPNTex };
+#else
     static void* sDoActionTextures[] = { gAttackDoActionENGTex, gCheckDoActionENGTex };
+#endif
 
     if (action >= DO_ACTION_MAX) {
         action = DO_ACTION_NONE;
@@ -2762,15 +2766,27 @@ void Interface_DrawActionLabel(GraphicsContext* gfxCtx, void* texture) {
 }
 
 void Interface_DrawItemButtons(PlayState* play) {
-    static void* cUpLabelTextures[] = { gNaviCUpENGTex, gNaviCUpENGTex, gNaviCUpENGTex };
+    static void* cUpLabelTextures[] = LANGUAGE_ARRAY(gNaviCUpJPNTex, gNaviCUpENGTex, gNaviCUpENGTex, gNaviCUpENGTex);
     static s16 startButtonLeftPos[] = { 132, 130, 130 };
     InterfaceContext* interfaceCtx = &play->interfaceCtx;
     Player* player = GET_PLAYER(play);
     PauseContext* pauseCtx = &play->pauseCtx;
     s16 temp; // Used as both an alpha value and a button index
-    s16 texCoordScale;
+
+#if OOT_NTSC
+#define START_BUTTON_LEFT_POS 132
+#define START_LABEL_SCALE R_START_LABEL_SCALE
+#define START_LABEL_WIDTH R_START_LABEL_WIDTH
+#define START_LABEL_HEIGHT R_START_LABEL_HEIGHT
+#else
+    s16 scale;
     s16 width;
     s16 height;
+#define START_BUTTON_LEFT_POS startButtonLeftPos[gSaveContext.language]
+#define START_LABEL_SCALE scale
+#define START_LABEL_WIDTH width
+#define START_LABEL_HEIGHT height
+#endif
 
     OPEN_DISPS(play->state.gfxCtx, "../z_parameter.c", 2900);
 
@@ -2811,9 +2827,9 @@ void Interface_DrawItemButtons(PlayState* play) {
             // Start Button Texture, Color & Label
             gDPPipeSync(OVERLAY_DISP++);
             gDPSetPrimColor(OVERLAY_DISP++, 0, 0, 120, 120, 120, interfaceCtx->startAlpha);
-            gSPTextureRectangle(OVERLAY_DISP++, startButtonLeftPos[gSaveContext.language] << 2, 17 << 2,
-                                (startButtonLeftPos[gSaveContext.language] + 22) << 2, 39 << 2, G_TX_RENDERTILE, 0, 0,
-                                (s32)(1.4277344 * (1 << 10)), (s32)(1.4277344 * (1 << 10)));
+            gSPTextureRectangle(OVERLAY_DISP++, START_BUTTON_LEFT_POS << 2, 17 << 2, (START_BUTTON_LEFT_POS + 22) << 2,
+                                39 << 2, G_TX_RENDERTILE, 0, 0, (s32)(1.4277344 * (1 << 10)),
+                                (s32)(1.4277344 * (1 << 10)));
             gDPPipeSync(OVERLAY_DISP++);
             gDPSetPrimColor(OVERLAY_DISP++, 0, 0, 255, 255, 255, interfaceCtx->startAlpha);
             gDPSetEnvColor(OVERLAY_DISP++, 0, 0, 0, 0);
@@ -2824,14 +2840,14 @@ void Interface_DrawItemButtons(PlayState* play) {
                                    DO_ACTION_TEX_WIDTH, DO_ACTION_TEX_HEIGHT, 0, G_TX_NOMIRROR | G_TX_WRAP,
                                    G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOLOD);
 
-            texCoordScale = (1 << 10) / (R_START_LABEL_DD(gSaveContext.language) / 100.0f);
-            width = DO_ACTION_TEX_WIDTH / (R_START_LABEL_DD(gSaveContext.language) / 100.0f);
-            height = DO_ACTION_TEX_HEIGHT / (R_START_LABEL_DD(gSaveContext.language) / 100.0f);
+            START_LABEL_SCALE = (1 << 10) / (R_START_LABEL_DD(gSaveContext.language) / 100.0f);
+            START_LABEL_WIDTH = DO_ACTION_TEX_WIDTH / (R_START_LABEL_DD(gSaveContext.language) / 100.0f);
+            START_LABEL_HEIGHT = DO_ACTION_TEX_HEIGHT / (R_START_LABEL_DD(gSaveContext.language) / 100.0f);
             gSPTextureRectangle(OVERLAY_DISP++, R_START_LABEL_X(gSaveContext.language) << 2,
                                 R_START_LABEL_Y(gSaveContext.language) << 2,
-                                (R_START_LABEL_X(gSaveContext.language) + width) << 2,
-                                (R_START_LABEL_Y(gSaveContext.language) + height) << 2, G_TX_RENDERTILE, 0, 0,
-                                texCoordScale, texCoordScale);
+                                (R_START_LABEL_X(gSaveContext.language) + START_LABEL_WIDTH) << 2,
+                                (R_START_LABEL_Y(gSaveContext.language) + START_LABEL_HEIGHT) << 2, G_TX_RENDERTILE, 0,
+                                0, START_LABEL_SCALE, START_LABEL_SCALE);
         }
     }
 
@@ -3285,7 +3301,7 @@ void Interface_Draw(PlayState* play) {
                                    DO_ACTION_TEX_WIDTH, DO_ACTION_TEX_HEIGHT, 0, G_TX_NOMIRROR | G_TX_WRAP,
                                    G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOLOD);
 
-            R_B_LABEL_DD = (1 << 10) / (WREG(37 + gSaveContext.language) / 100.0f);
+            R_B_LABEL_DD = (1 << 10) / (R_B_LABEL_SCALE(gSaveContext.language) / 100.0f);
             gSPTextureRectangle(OVERLAY_DISP++, R_B_LABEL_X(gSaveContext.language) << 2,
                                 R_B_LABEL_Y(gSaveContext.language) << 2,
                                 (R_B_LABEL_X(gSaveContext.language) + DO_ACTION_TEX_WIDTH) << 2,
@@ -3347,7 +3363,7 @@ void Interface_Draw(PlayState* play) {
                           PRIMITIVE, ENVIRONMENT, TEXEL0, ENVIRONMENT, TEXEL0, 0, PRIMITIVE, 0);
         gDPSetPrimColor(OVERLAY_DISP++, 0, 0, 255, 255, 255, interfaceCtx->aAlpha);
         gDPSetEnvColor(OVERLAY_DISP++, 0, 0, 0, 0);
-        Matrix_Translate(0.0f, 0.0f, WREG(46 + gSaveContext.language) / 10.0f, MTXMODE_NEW);
+        Matrix_Translate(0.0f, 0.0f, R_A_LABEL_Z(gSaveContext.language) / 10.0f, MTXMODE_NEW);
         Matrix_Scale(1.0f, 1.0f, 1.0f, MTXMODE_APPLY);
         Matrix_RotateX(interfaceCtx->unk_1F4 / 10000.0f, MTXMODE_APPLY);
         gSPMatrix(OVERLAY_DISP++, MATRIX_NEW(play->state.gfxCtx, "../z_parameter.c", 3701),
