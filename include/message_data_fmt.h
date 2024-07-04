@@ -11,69 +11,91 @@
 
 // Non-Wide (nes/ger/fra)
 
-#define MESSAGE_NEWLINE                    0x01
-#define MESSAGE_END                        0x02
-#define MESSAGE_BOX_BREAK                  0x04
-#define MESSAGE_COLOR                      0x05
-#define MESSAGE_SHIFT                      0x06
-#define MESSAGE_TEXTID                     0x07
-#define MESSAGE_QUICKTEXT_ENABLE           0x08
-#define MESSAGE_QUICKTEXT_DISABLE          0x09
-#define MESSAGE_PERSISTENT                 0x0A
-#define MESSAGE_EVENT                      0x0B
-#define MESSAGE_BOX_BREAK_DELAYED          0x0C
-#define MESSAGE_AWAIT_BUTTON_PRESS         0x0D
-#define MESSAGE_FADE                       0x0E
-#define MESSAGE_NAME                       0x0F
-#define MESSAGE_OCARINA                    0x10
-#define MESSAGE_FADE2                      0x11
-#define MESSAGE_SFX                        0x12
-#define MESSAGE_ITEM_ICON                  0x13
-#define MESSAGE_TEXT_SPEED                 0x14
-#define MESSAGE_BACKGROUND                 0x15
-#define MESSAGE_MARATHON_TIME              0x16
-#define MESSAGE_RACE_TIME                  0x17
-#define MESSAGE_POINTS                     0x18
-#define MESSAGE_TOKENS                     0x19
-#define MESSAGE_UNSKIPPABLE                0x1A
-#define MESSAGE_TWO_CHOICE                 0x1B
-#define MESSAGE_THREE_CHOICE               0x1C
-#define MESSAGE_FISH_INFO                  0x1D
-#define MESSAGE_HIGHSCORE                  0x1E
-#define MESSAGE_TIME                       0x1F
+#define MESSAGE_NEWLINE                             0x01
+#define MESSAGE_END                                 0x02
+#define MESSAGE_BOX_BREAK                           0x04
+#define MESSAGE_COLOR                               0x05
+#define MESSAGE_SHIFT                               0x06
+#define MESSAGE_TEXTID                              0x07
+#define MESSAGE_QUICKTEXT_ENABLE                    0x08
+#define MESSAGE_QUICKTEXT_DISABLE                   0x09
+#define MESSAGE_PERSISTENT                          0x0A
+#define MESSAGE_EVENT                               0x0B
+#define MESSAGE_BOX_BREAK_DELAYED                   0x0C
+#define MESSAGE_AWAIT_BUTTON_PRESS                  0x0D
+#define MESSAGE_FADE                                0x0E
+#define MESSAGE_NAME                                0x0F
+#define MESSAGE_OCARINA                             0x10
+#define MESSAGE_FADE2                               0x11
+#define MESSAGE_SFX                                 0x12
+#define MESSAGE_ITEM_ICON                           0x13
+#define MESSAGE_TEXT_SPEED                          0x14
+#define MESSAGE_BACKGROUND                          0x15
+#define MESSAGE_MARATHON_TIME                       0x16
+#define MESSAGE_RACE_TIME                           0x17
+#define MESSAGE_POINTS                              0x18
+#define MESSAGE_TOKENS                              0x19
+#define MESSAGE_UNSKIPPABLE                         0x1A
+#define MESSAGE_TWO_CHOICE                          0x1B
+#define MESSAGE_THREE_CHOICE                        0x1C
+#define MESSAGE_FISH_INFO                           0x1D
+#define MESSAGE_HIGHSCORE                           0x1E
+#define MESSAGE_TIME                                0x1F
+#define MESSAGE_SPACE                               0x20
 
 // Wide (jpn)
 
-#define MESSAGE_WIDE_NEWLINE               0x000A
-#define MESSAGE_WIDE_END                   0x8170
-#define MESSAGE_WIDE_BOX_BREAK             0x81A5
-#define MESSAGE_WIDE_COLOR                 0x000B
-#define MESSAGE_WIDE_SHIFT                 0x86C7
-#define MESSAGE_WIDE_TEXTID                0x81CB
-#define MESSAGE_WIDE_QUICKTEXT_ENABLE      0x8189
-#define MESSAGE_WIDE_QUICKTEXT_DISABLE     0x818A
-#define MESSAGE_WIDE_PERSISTENT            0x86C8
-#define MESSAGE_WIDE_EVENT                 0x819F
-#define MESSAGE_WIDE_BOX_BREAK_DELAYED     0x81A3
-#define MESSAGE_WIDE_AWAIT_BUTTON_PRESS    0x81A4
-#define MESSAGE_WIDE_FADE                  0x819E
-#define MESSAGE_WIDE_NAME                  0x874F
-#define MESSAGE_WIDE_OCARINA               0x81F0
-#define MESSAGE_WIDE_FADE2                 0x81F4
-#define MESSAGE_WIDE_SFX                   0x81F3
-#define MESSAGE_WIDE_ITEM_ICON             0x819A
-#define MESSAGE_WIDE_TEXT_SPEED            0x86C9
-#define MESSAGE_WIDE_BACKGROUND            0x86B3
-#define MESSAGE_WIDE_MARATHON_TIME         0x8791
-#define MESSAGE_WIDE_RACE_TIME             0x8792
-#define MESSAGE_WIDE_POINTS                0x879B
-#define MESSAGE_WIDE_TOKENS                0x86A3
-#define MESSAGE_WIDE_UNSKIPPABLE           0x8199
-#define MESSAGE_WIDE_TWO_CHOICE            0x81BC
-#define MESSAGE_WIDE_THREE_CHOICE          0x81B8
-#define MESSAGE_WIDE_FISH_INFO             0x86A4
-#define MESSAGE_WIDE_HIGHSCORE             0x869F
-#define MESSAGE_WIDE_TIME                  0x81A1
+#define MESSAGE_WIDE_NEWLINE                        0x000A
+#define MESSAGE_WIDE_END                            0x8170
+#define MESSAGE_WIDE_BOX_BREAK                      0x81A5
+#define MESSAGE_WIDE_COLOR                          0x000B
+#define MESSAGE_WIDE_SHIFT                          0x86C7
+#define MESSAGE_WIDE_TEXTID                         0x81CB
+#define MESSAGE_WIDE_QUICKTEXT_ENABLE               0x8189
+#define MESSAGE_WIDE_QUICKTEXT_DISABLE              0x818A
+#define MESSAGE_WIDE_PERSISTENT                     0x86C8
+#define MESSAGE_WIDE_EVENT                          0x819F
+#define MESSAGE_WIDE_BOX_BREAK_DELAYED              0x81A3
+#define MESSAGE_WIDE_AWAIT_BUTTON_PRESS             0x81A4
+#define MESSAGE_WIDE_FADE                           0x819E
+#define MESSAGE_WIDE_NAME                           0x874F
+#define MESSAGE_WIDE_OCARINA                        0x81F0
+#define MESSAGE_WIDE_FADE2                          0x81F4
+#define MESSAGE_WIDE_SFX                            0x81F3
+#define MESSAGE_WIDE_ITEM_ICON                      0x819A
+#define MESSAGE_WIDE_TEXT_SPEED                     0x86C9
+#define MESSAGE_WIDE_BACKGROUND                     0x86B3
+#define MESSAGE_WIDE_MARATHON_TIME                  0x8791
+#define MESSAGE_WIDE_RACE_TIME                      0x8792
+#define MESSAGE_WIDE_POINTS                         0x879B
+#define MESSAGE_WIDE_TOKENS                         0x86A3
+#define MESSAGE_WIDE_UNSKIPPABLE                    0x8199
+#define MESSAGE_WIDE_TWO_CHOICE                     0x81BC
+#define MESSAGE_WIDE_THREE_CHOICE                   0x81B8
+#define MESSAGE_WIDE_FISH_INFO                      0x86A4
+#define MESSAGE_WIDE_HIGHSCORE                      0x869F
+#define MESSAGE_WIDE_TIME                           0x81A1
+#define MESSAGE_WIDE_SPACE                          0x8140 // '　'
+#define MESSAGE_WIDE_TOUTEN                         0x8141 // '、'
+#define MESSAGE_WIDE_KUTEN                          0x8142 // '。'
+#define MESSAGE_WIDE_PERIOD                         0x8144 // '．'
+#define MESSAGE_WIDE_NAKATEN                        0x8145 // '・'
+#define MESSAGE_WIDE_QUESTION_MARK                  0x8148 // '？'
+#define MESSAGE_WIDE_EXCLAMATION_MARK               0x8149 // '！'
+#define MESSAGE_WIDE_CIRCUMFLEX_ACCENT              0x814F // '＾'
+#define MESSAGE_WIDE_DOUBLE_QUOTATION_MARK_LEFT     0x8167 // '“'
+#define MESSAGE_WIDE_DOUBLE_QUOTATION_MARK_RIGHT    0x8168 // '”'
+#define MESSAGE_WIDE_PARENTHESES_LEFT               0x8169 // '（'
+#define MESSAGE_WIDE_PARENTHESES_RIGHT              0x816A // '）'
+#define MESSAGE_WIDE_KAGIKAKKO_LEFT                 0x8175 // '「'
+#define MESSAGE_WIDE_KAGIKAKKO_RIGHT                0x8176 // '」'
+#define MESSAGE_WIDE_NUMBER_SIGN                    0x8194 // '＃'
+#define MESSAGE_WIDE_ASTERISK                       0x8196 // '＊'
+#define MESSAGE_WIDE_ZERO                           0x824F // '０'
+#define MESSAGE_WIDE_ONE                            0x8250 // '１'
+#define MESSAGE_WIDE_HOURS                          0x8E9E // '時'
+#define MESSAGE_WIDE_SECONDS                        0x9562 // '秒'
+#define MESSAGE_WIDE_MINUTES                        0x95AA // '分'
 
 /*
  *  Colors
