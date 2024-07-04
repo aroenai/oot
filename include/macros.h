@@ -1,6 +1,12 @@
 #ifndef MACROS_H
 #define MACROS_H
 
+// OOT version defines
+#define OOT_GC_US 1
+#define OOT_GC_EU 2
+#define OOT_GC_EU_MQ 3
+#define OOT_GC_EU_MQ_DBG 4
+
 #ifndef AVOID_UB
 #define BAD_RETURN(type) type
 #else
