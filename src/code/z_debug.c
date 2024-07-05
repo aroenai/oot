@@ -7,11 +7,6 @@ typedef struct {
     /* 0x3 */ char text[21];
 } DebugCamTextBufferEntry; // size = 0x18
 
-typedef struct {
-    /* 0x0 */ u16 hold;
-    /* 0x2 */ u16 press;
-} InputCombo; // size = 0x4
-
 RegEditor* gRegEditor;
 
 DebugCamTextBufferEntry sDebugCamTextBuffer[22];
@@ -30,6 +25,11 @@ Color_RGBA8 sDebugCamTextColors[] = {
 };
 
 #if OOT_DEBUG
+typedef struct {
+    /* 0x0 */ u16 hold;
+    /* 0x2 */ u16 press;
+} InputCombo; // size = 0x4
+
 InputCombo sRegGroupInputCombos[REG_GROUPS] = {
     { BTN_L, BTN_CUP },        //  REG
     { BTN_L, BTN_CLEFT },      // SREG

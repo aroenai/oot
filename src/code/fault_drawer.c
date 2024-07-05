@@ -30,6 +30,9 @@ typedef struct {
     /* 0x38 */ void (*inputCallback)(void);
 } FaultDrawer; // size = 0x3C
 
+FaultDrawer sFaultDrawer;
+char D_8016B6C0[0x20];
+
 const u32 sFaultDrawerFont[] = {
     0x00DFFD00, 0x0AEEFFA0, 0x0DF22DD0, 0x06611DC0, 0x01122DD0, 0x06719900, 0x011EED10, 0x077EF700, 0x01562990,
     0x05589760, 0x0DD22990, 0x05599770, 0x04DFFD40, 0x026EF700, 0x00000000, 0x00000000, 0x08BFFB00, 0x0EFFFFC0,
@@ -98,9 +101,6 @@ FaultDrawer sFaultDrawerDefault = {
     false,
     NULL,
 };
-
-FaultDrawer sFaultDrawer;
-char D_8016B6C0[0x20];
 
 void FaultDrawer_SetOsSyncPrintfEnabled(u32 enabled) {
     sFaultDrawer.osSyncPrintfEnabled = enabled;

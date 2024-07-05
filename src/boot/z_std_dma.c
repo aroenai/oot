@@ -21,6 +21,10 @@
 #include "global.h"
 #include "terminal.h"
 
+// For retail BSS ordering, the block number of sDmaMgrStackInfo must be between
+// 0 and 249 inclusive.
+#pragma increment_block_number 10
+
 StackEntry sDmaMgrStackInfo;
 OSMesgQueue sDmaMgrMsgQueue;
 OSMesg sDmaMgrMsgBuf[32];

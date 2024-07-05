@@ -13,6 +13,10 @@ Color_RGBA8_u32 gVisMonoColor;
 FaultClient D_801614B8;
 #endif
 
+// For retail BSS ordering, the block number of sTransitionFillTimer be greater than the
+// the block numbers assigned to extern variables above (declared in variables.h).
+#pragma increment_block_number 0
+
 s16 sTransitionFillTimer;
 
 #if OOT_DEBUG
@@ -168,7 +172,11 @@ void Play_SetupTransition(PlayState* this, s32 transitionType) {
                 break;
 
             default:
+#if OOT_NTSC
+                HUNGUP_AND_CRASH("../z_play.c", 2287);
+#else
                 HUNGUP_AND_CRASH("../z_play.c", 2290);
+#endif
                 break;
         }
     }

@@ -395,6 +395,14 @@ typedef struct {
 #define MAP_48x85_TEX_HEIGHT 85
 #define MAP_48x85_TEX_SIZE ((MAP_48x85_TEX_WIDTH * MAP_48x85_TEX_HEIGHT) / 2) // 48x85 CI4 texture
 
+#if OOT_NTSC
+#define PLACE_NAME_SIZE 0x2000
+#define GI_OBJECT_SEGMENT_SIZE 0x2000
+#else
+#define PLACE_NAME_SIZE 0x3000
+#define GI_OBJECT_SEGMENT_SIZE 0x3000
+#endif
+
 typedef struct DebugDispObject {
     /* 0x00 */ Vec3f pos;
     /* 0x0C */ Vec3s rot;

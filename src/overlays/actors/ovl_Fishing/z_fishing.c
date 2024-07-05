@@ -12,7 +12,11 @@
 #include "terminal.h"
 
 // For retail BSS ordering, the block number of sStreamSfxProjectedPos must be 0.
+#if OOT_NTSC
+#pragma increment_block_number 208
+#else
 #pragma increment_block_number 206
+#endif
 
 #define FLAGS ACTOR_FLAG_4
 
@@ -5759,8 +5763,17 @@ void Fishing_UpdateOwner(Actor* thisx, PlayState* play2) {
     SkinMatrix_Vec3fMtxFMultXYZW(&play->viewProjectionMtxF, &sStreamSfxPos, &sStreamSfxProjectedPos, &sProjectedW);
 
     Sfx_PlaySfxAtPos(&sStreamSfxProjectedPos, NA_SE_EV_WATER_WALL - SFX_FLAG);
-    // convert length to weight. Theoretical max of 59 lbs (127^2*.0036+.5)
+
+#if OOT_NTSC
+    if (gSaveContext.language == LANGUAGE_JPN) {
+        gSaveContext.minigameScore = sFishLengthToWeigh;
+    } else {
+        // convert length to weight. Theoretical max of 59 lbs (127^2*.0036+.5)
+        gSaveContext.minigameScore = (SQ((f32)sFishLengthToWeigh) * 0.0036f) + 0.5f;
+    }
+#else
     gSaveContext.minigameScore = (SQ((f32)sFishLengthToWeigh) * 0.0036f) + 0.5f;
+#endif
 
 #if OOT_DEBUG
     if (BREG(26) != 0) {
