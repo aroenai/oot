@@ -32,6 +32,8 @@ typedef enum {
 #define FILENAME_SPACE                      0xDF
 #define FILENAME_DASH                       0xE4
 #define FILENAME_PERIOD                     0xEA
+#define FILENAME_DAKUTEN                    0xE7
+#define FILENAME_HANDAKUTEN                 0xE8
 #else
 #define FILENAME_DIGIT(c)                   ((c) - '0')
 #define FILENAME_UPPERCASE(c)               ((c) - 'A' + 0x0A)
