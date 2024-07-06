@@ -1,24 +1,24 @@
 dmadata_start: 0x7170
 text_lang_pal: false
 variables:
-  gMtxClear: 0x800FE2A0
-  sJpnMessageEntryTable: 0x80109E8C
-  sNesMessageEntryTable: 0x8010DFCC
-  sStaffMessageEntryTable: 0x801121EC
-  sShadowTex: 0x80A74130
+  gMtxClear: 0x800FE2C0
+  sJpnMessageEntryTable: 0x80109EAC
+  sNesMessageEntryTable: 0x8010DFEC
+  sStaffMessageEntryTable: 0x8011220C
+  sShadowTex: 0x80A74150
 assets:
 - name: code/fbdemo_circle
   xml_path: assets/xml/code/fbdemo_circle.xml
-  start_offset: 0xEB768
-  end_offset: 0xEC988
+  start_offset: 0xEB788
+  end_offset: 0xEC9A8
 - name: code/fbdemo_triforce
   xml_path: assets/xml/code/fbdemo_triforce.xml
-  start_offset: 0xEABF0
-  end_offset: 0xEACC0
+  start_offset: 0xEAC10
+  end_offset: 0xEACE0
 - name: code/fbdemo_wipe1
   xml_path: assets/xml/code/fbdemo_wipe1.xml
-  start_offset: 0xEACC0
-  end_offset: 0xEB650
+  start_offset: 0xEACE0
+  end_offset: 0xEB670
 - name: misc/link_animetion
   xml_path: assets/xml/misc/link_animetion.xml
 - name: misc/z_select_static
@@ -468,7 +468,7 @@ assets:
 - name: objects/object_ma2
   xml_path: assets/xml/objects/object_ma2.xml
 - name: objects/object_mag
-  xml_path: assets/xml/objects/object_mag_v3.xml
+  xml_path: assets/xml/objects/object_mag_v2.xml
 - name: objects/object_mamenoki
   xml_path: assets/xml/objects/object_mamenoki.xml
 - name: objects/object_mastergolon
@@ -1154,7 +1154,7 @@ assets:
 - name: textures/message_texture_static
   xml_path: assets/xml/textures/message_texture_static.xml
 - name: textures/nes_font_static
-  xml_path: assets/xml/textures/nes_font_static_v2.xml
+  xml_path: assets/xml/textures/nes_font_static.xml
 - name: textures/nintendo_rogo_static
   xml_path: assets/xml/textures/nintendo_rogo_static.xml
 - name: textures/parameter_static

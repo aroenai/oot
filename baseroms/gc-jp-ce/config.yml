@@ -5,7 +5,7 @@ variables:
   sJpnMessageEntryTable: 0x80109E8C
   sNesMessageEntryTable: 0x8010DFCC
   sStaffMessageEntryTable: 0x801121EC
-  sShadowTex: 0x80A74130
+  sShadowTex: 0x80A74120
 assets:
 - name: code/fbdemo_circle
   xml_path: assets/xml/code/fbdemo_circle.xml

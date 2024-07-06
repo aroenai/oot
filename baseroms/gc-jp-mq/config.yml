@@ -5,7 +5,7 @@ variables:
   sJpnMessageEntryTable: 0x80109E8C
   sNesMessageEntryTable: 0x8010DFCC
   sStaffMessageEntryTable: 0x801121EC
-  sShadowTex: 0x80A74130
+  sShadowTex: 0x80A740D0
 assets:
 - name: code/fbdemo_circle
   xml_path: assets/xml/code/fbdemo_circle.xml
@@ -468,7 +468,7 @@ assets:
 - name: objects/object_ma2
   xml_path: assets/xml/objects/object_ma2.xml
 - name: objects/object_mag
-  xml_path: assets/xml/objects/object_mag_v3.xml
+  xml_path: assets/xml/objects/object_mag_v2_mq.xml
 - name: objects/object_mamenoki
   xml_path: assets/xml/objects/object_mamenoki.xml
 - name: objects/object_mastergolon
@@ -918,13 +918,13 @@ assets:
   start_offset: 0x410
   end_offset: 0xEF8
 - name: scenes/dungeons/bdan
-  xml_path: assets/xml/scenes/dungeons/bdan.xml
+  xml_path: assets/xml/scenes/dungeons/bdan_mq.xml
 - name: scenes/dungeons/bdan_boss
   xml_path: assets/xml/scenes/dungeons/bdan_boss.xml
 - name: scenes/dungeons/Bmori1
-  xml_path: assets/xml/scenes/dungeons/Bmori1.xml
+  xml_path: assets/xml/scenes/dungeons/Bmori1_mq.xml
 - name: scenes/dungeons/ddan
-  xml_path: assets/xml/scenes/dungeons/ddan.xml
+  xml_path: assets/xml/scenes/dungeons/ddan_mq.xml
 - name: scenes/dungeons/ddan_boss
   xml_path: assets/xml/scenes/dungeons/ddan_boss.xml
 - name: scenes/dungeons/FIRE_bs
@@ -940,35 +940,35 @@ assets:
 - name: scenes/dungeons/ganon_sonogo
   xml_path: assets/xml/scenes/dungeons/ganon_sonogo.xml
 - name: scenes/dungeons/ganontika
-  xml_path: assets/xml/scenes/dungeons/ganontika.xml
+  xml_path: assets/xml/scenes/dungeons/ganontika_mq.xml
 - name: scenes/dungeons/ganontikasonogo
   xml_path: assets/xml/scenes/dungeons/ganontikasonogo.xml
 - name: scenes/dungeons/gerudoway
   xml_path: assets/xml/scenes/dungeons/gerudoway.xml
 - name: scenes/dungeons/HAKAdan
-  xml_path: assets/xml/scenes/dungeons/HAKAdan.xml
+  xml_path: assets/xml/scenes/dungeons/HAKAdan_mq.xml
 - name: scenes/dungeons/HAKAdan_bs
   xml_path: assets/xml/scenes/dungeons/HAKAdan_bs.xml
 - name: scenes/dungeons/HAKAdanCH
-  xml_path: assets/xml/scenes/dungeons/HAKAdanCH.xml
+  xml_path: assets/xml/scenes/dungeons/HAKAdanCH_mq.xml
 - name: scenes/dungeons/HIDAN
-  xml_path: assets/xml/scenes/dungeons/HIDAN.xml
+  xml_path: assets/xml/scenes/dungeons/HIDAN_mq.xml
 - name: scenes/dungeons/ice_doukutu
-  xml_path: assets/xml/scenes/dungeons/ice_doukutu.xml
+  xml_path: assets/xml/scenes/dungeons/ice_doukutu_mq.xml
 - name: scenes/dungeons/jyasinboss
   xml_path: assets/xml/scenes/dungeons/jyasinboss.xml
 - name: scenes/dungeons/jyasinzou
-  xml_path: assets/xml/scenes/dungeons/jyasinzou.xml
+  xml_path: assets/xml/scenes/dungeons/jyasinzou_mq.xml
 - name: scenes/dungeons/men
-  xml_path: assets/xml/scenes/dungeons/men.xml
+  xml_path: assets/xml/scenes/dungeons/men_mq.xml
 - name: scenes/dungeons/MIZUsin
-  xml_path: assets/xml/scenes/dungeons/MIZUsin.xml
+  xml_path: assets/xml/scenes/dungeons/MIZUsin_mq.xml
 - name: scenes/dungeons/MIZUsin_bs
   xml_path: assets/xml/scenes/dungeons/MIZUsin_bs.xml
 - name: scenes/dungeons/moribossroom
   xml_path: assets/xml/scenes/dungeons/moribossroom.xml
 - name: scenes/dungeons/ydan
-  xml_path: assets/xml/scenes/dungeons/ydan.xml
+  xml_path: assets/xml/scenes/dungeons/ydan_mq.xml
 - name: scenes/dungeons/ydan_boss
   xml_path: assets/xml/scenes/dungeons/ydan_boss.xml
 - name: scenes/indoors/bowling
@@ -1154,7 +1154,7 @@ assets:
 - name: textures/message_texture_static
   xml_path: assets/xml/textures/message_texture_static.xml
 - name: textures/nes_font_static
-  xml_path: assets/xml/textures/nes_font_static_v2.xml
+  xml_path: assets/xml/textures/nes_font_static.xml
 - name: textures/nintendo_rogo_static
   xml_path: assets/xml/textures/nintendo_rogo_static.xml
 - name: textures/parameter_static

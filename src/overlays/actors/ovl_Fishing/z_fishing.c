@@ -13,9 +13,9 @@
 
 // For retail BSS ordering, the block number of sStreamSfxProjectedPos must be 0.
 #if OOT_NTSC
-#pragma increment_block_number 208
+#pragma increment_block_number 207
 #else
-#pragma increment_block_number 206
+#pragma increment_block_number 205
 #endif
 
 #define FLAGS ACTOR_FLAG_4
